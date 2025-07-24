@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
       <div className="card-content">
         <h2>{name}</h2>
         <p>lorem dfasfk kdfaskdfjdl</p>
-        <p>Rating: {rating} ⭐</p>
+        <p>Rating: {rating === null ? "0": rating} ⭐</p>
         <p>Price: ₹ {price/100}</p>
       </div>
     </div>

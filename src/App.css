@@ -63,6 +63,18 @@ header {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.filter-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
 .rest-container {
   margin: auto;
   margin-top: 20px;
