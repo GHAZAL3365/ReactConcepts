@@ -1,6 +1,12 @@
+import { useState } from "react";
 import { LOGO_URL, CART_ICON_URL } from "../utills/constants";
 
 const Header = () => {
+ const [isLogin, setIsLogin] = useState(false);
+
+ const handleLogin = () => {
+  setIsLogin((prevValue) => !prevValue)
+ }
   return (
     <header>
       <nav className="header">
@@ -18,6 +24,7 @@ const Header = () => {
           <li id="cart">
             <img src= {CART_ICON_URL} />
           </li>
+          <button onClick={handleLogin} className="auth-btn">{isLogin ? "Login": "Logout"}</button>
         </ul>
       </nav>
     </header>

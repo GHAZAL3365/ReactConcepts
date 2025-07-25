@@ -1,20 +1,24 @@
 import { FOOD_API_URL } from "../utills/constants";
+import { useState } from "react";
 
 const RestaurantCard = (props) => {
-   const { name, rating, imageId, price } = props.foodListData || {};
-    console.log(props);
+
+
+   const { name,avgRating, cloudinaryImageId, costForTwo, cuisines } = props?.foodListData || {};
+   
+    console.log(props.foodListData);
   return (
     <div className="restaurant-card">
       <img
-        src={FOOD_API_URL + imageId
+        src={FOOD_API_URL + cloudinaryImageId
         }
         alt="Restaurant"
       />
       <div className="card-content">
         <h2>{name}</h2>
-        <p>lorem dfasfk kdfaskdfjdl</p>
-        <p>Rating: {rating === null ? "0": rating} ⭐</p>
-        <p>Price: ₹ {price/100}</p>
+        <p><strong>Cuisines</strong>: {cuisines?.join(" , ")}</p>
+        <p>Rating: {avgRating === null ? "0": avgRating} ⭐</p>
+        <p>{costForTwo}</p>
       </div>
     </div>
   );
