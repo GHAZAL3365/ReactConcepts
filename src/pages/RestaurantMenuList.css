@@ -1,0 +1,40 @@
+.menu-container  {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.rest-info {
+    width: 100%;
+    margin: auto;
+    border-bottom: 1px  solid  #ccc ;
+    padding-bottom: 4px;
+}
+
+.rest-title {
+    color: #111;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.menu-card {
+    margin-top: 2rem;
+    padding-bottom: 10px;
+    border-bottom: 1px  solid #ccc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.food-img {
+    
+    border-radius: 10px;
+}
+
+.food-img img {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 150px;
+    
+}

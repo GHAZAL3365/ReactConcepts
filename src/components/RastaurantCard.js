@@ -3,10 +3,8 @@ import { useState } from "react";
 
 const RestaurantCard = (props) => {
 
-
-   const { name,avgRating, cloudinaryImageId, costForTwo, cuisines } = props?.foodListData || {};
+   const { name,  avgRating, cloudinaryImageId, costForTwo, cuisines } = props?.restData || {};
    
-    console.log(props.foodListData);
   return (
     <div className="restaurant-card">
       <img
