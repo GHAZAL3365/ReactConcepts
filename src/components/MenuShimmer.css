@@ -1,0 +1,41 @@
+
+
+.info-text {
+
+width: 200px;
+height: 20px;
+border-radius: 2px;
+background-color: #ccc;
+margin-bottom: 5px;
+}
+
+.title {
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+
+.menu-container-shimmer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.menu-content-shimmer {
+    width: 66%;
+    height: 150px;
+    background-color: #ccc;
+     border-radius: 5px;
+
+}
+
+.menu-img-shimmer {
+    width: 160px;
+    height: 160px;
+    background-color: #ccc;
+    border-radius: 10px;
+}

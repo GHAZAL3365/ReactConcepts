@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
    const { name,  avgRating, cloudinaryImageId, costForTwo, cuisines } = props?.restData || {};
    
   return (
-    <div className="restaurant-card">
+    <div className="restaurant-card" onClick={props.navigateOnClick}>
       <img
         src={FOOD_API_URL + cloudinaryImageId
         }

@@ -3,6 +3,7 @@ import RestaurantCard from "./RastaurantCard";
 import { useState, useEffect } from "react";
 import { RESTAURANT_API_URL } from "../utills/constants";
 import Shimmer from "./Shimmer";
+import { useNavigate } from "react-router-dom";
 
 const RestaurantList = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -11,6 +12,8 @@ const RestaurantList = () => {
   );
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   const handleClick = () => {
     const fillteredListOfRestaurants = listOfRestaurants.filter(
@@ -83,6 +86,7 @@ const RestaurantList = () => {
             <RestaurantCard
               key={restaurant.info.id}
               restData={restaurant.info}
+              navigateOnClick  = {() =>  navigate(`/restaurant-menu/${restaurant.info.id}`)}
             />
           ))
         )}

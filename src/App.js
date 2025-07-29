@@ -16,7 +16,6 @@ import RestaurantMenuList from "./pages/RestaurantMenuList";
 
 const App = () => {
 
-
   return ( <div > 
       <Header />
       {/* <h1 className="title">Food Items  List</h1> */}
