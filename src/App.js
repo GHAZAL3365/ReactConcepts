@@ -6,6 +6,7 @@ import "./App.css"
 import Header from "./components/Header";
 import RestaurantList from "./components/RestaurantsList";
 import Footer from "./components/Footer";
+import Login from "./pages/Login";
 import { createBrowserRouter,  RouterProvider, Outlet } from "react-router-dom";
 
 import About from "./pages/About";
@@ -50,6 +51,11 @@ const appRoutes = createBrowserRouter ([
    }
     ]
   },
+
+  {
+    path: "/login",
+    element: <Login />
+  }
 
  
 ])

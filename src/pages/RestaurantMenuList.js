@@ -25,13 +25,13 @@ const RestaurantMenuList = () => {
   const [menuList, setMenuList] = useState([]);
 
   const {resId} = useParams();
-  console.log(resId)
+ 
 
   // rerender due to React.StrictMode in index.js
   // This will call useEffect twice in development mode to help identify side effects
   useEffect(() => {
     fetchData();
-    console.log("useEffect called");
+    
   }, []);
 
   const fetchData = async () => {
@@ -62,7 +62,7 @@ const RestaurantMenuList = () => {
       avgRatingString,
     });
 
-    console.log(json?.data?.cards[2]?.card?.card?.info)
+   
 
     const menuListData =
       json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
@@ -83,7 +83,7 @@ const RestaurantMenuList = () => {
     });
     setMenuList(filteredMenuList);
 
-    console.log("filtered menu list", filteredMenuList)
+  
   
   };
  

@@ -1,4 +1,8 @@
-
+.res-info-shimmer {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
 
 .info-text {
 
@@ -18,7 +22,9 @@ margin-bottom: 5px;
 }
 
 .menu-container-shimmer {
+    max-width: 900px;
     width: 100%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;

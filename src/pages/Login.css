@@ -1,0 +1,74 @@
+
+.flex-center {
+    max-height: 100vh;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-container {
+   
+    max-width: 450px;
+    width: 100%;
+    border-radius: 10px ;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 250, 250);
+    border:  1px solid #ccc;
+    padding: 1rem;
+    padding-bottom: 2rem;
+   
+   
+
+}
+
+
+
+
+.login-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: rgb(211, 120, 54);
+}
+
+P{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.login-fields {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.login-inputs {
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+.auth-btn {
+    padding: 8px 10px ;
+    margin-top: 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(211, 120, 54);
+  
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+       background-color: rgb(228, 130, 60);
+  
+
+}
+
+
