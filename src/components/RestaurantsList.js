@@ -1,4 +1,4 @@
-import foodListData from "../utills/mockData";
+
 import RestaurantCard from "./RastaurantCard";
 import { useState, useEffect } from "react";
 import { RESTAURANT_API_URL } from "../utills/constants";

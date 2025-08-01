@@ -1,5 +1,5 @@
 import { FOOD_API_URL } from "../utills/constants";
-import { useState } from "react";
+import { useState } from "react"; 
 
 const RestaurantCard = (props) => {
 
