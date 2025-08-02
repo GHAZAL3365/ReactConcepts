@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "../index.css";
-import "./App.css"
+import "./index.css";
 
 import Header from "./components/Header";
 import RestaurantList from "./components/RestaurantsList";
@@ -20,11 +19,12 @@ const App = () => {
   return ( <div > 
       <Header />
       {/* <h1 className="title">Food Items  List</h1> */}
-      <div  className="container"> <Outlet /></div>
+      <div  className="p-4" > <Outlet /></div>
       <Footer />
     </div> )
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 
 
 const appRoutes = createBrowserRouter ([

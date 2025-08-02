@@ -28,27 +28,50 @@ class ExampleComponent extends React.Component {
     constructor (props) {
         super(props)
         this.state=  {
-           name: "",
-           age: "",
-           location: "",
+           name: props.name,
+           age: props.age,
+           location: props.location, 
         }
       
     
     }
 
+      handleToggle = () => {
+         this.setState((prevState) => {
+            return {
+                ...prevState,
+                isToggled: !prevState.isToggled
+            }
+         })
+    }
+
+   
+
     componentDidMount() {
         console.log("child didMount called")
     }
 
+
+      
+
+     
+
+
     render() {
           console.log("child Render")
-          const {name, age, location} = this.props
+          console.log(this.state)
+          const {name, age, location} = this.state;
           
         return <div> I am coming from it's child 
             
-             <h1 nam>{name}</h1>
-             <h2 nam>Age: {age}</h2>
-             <h3 nam>Location: {location}</h3>
+             <h1  >{name}</h1>
+             <h2 >Age: {age}</h2>
+             <h3 >Location: {location}</h3>
+             <button onClick={() => this.setState({
+                name: "Malik",
+                age: 26,
+                location: "Mumbai"
+             })}>Click Me To Changes Details</button>
 
         </div>
     }

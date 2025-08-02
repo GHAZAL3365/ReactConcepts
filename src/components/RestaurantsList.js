@@ -1,5 +1,4 @@
-
-import RestaurantCard from "./RastaurantCard";
+import RestaurantCard, {withAvailableRest} from "./RastaurantCard";
 import { useState, useEffect } from "react";
 import { RESTAURANT_API_URL } from "../utills/constants";
 import Shimmer from "./Shimmer";
@@ -19,13 +18,12 @@ const RestaurantList = () => {
     const fillteredListOfRestaurants = listOfRestaurants.filter(
       (rest) => rest.info.avgRating >= 4.4
     );
-    
+
     setFillteredListOfRestaurants(fillteredListOfRestaurants);
   };
 
   useEffect(() => {
     fetchData();
-    
   }, []);
 
   const fetchData = async () => {
@@ -34,7 +32,8 @@ const RestaurantList = () => {
       const json = await response.json();
 
       const restaurants =
-        json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
 
       setListOfRestaurants(restaurants);
       setFillteredListOfRestaurants(restaurants);
@@ -53,41 +52,55 @@ const RestaurantList = () => {
     setSearchQuery("");
   };
 
+  const ClosedRestaurantsCard = withAvailableRest(RestaurantCard);
+
   return (
     <>
-      <div className="filter-search-container">
-        <div className="search">
+      <div className="p-2 flex justify-between w-full mb-10">
+        <div className=" w-2/6 flex items-center justify-between border-[1.5px] border-amber-500 rounded-md">
           <input
             type="text"
+            className="outline-0 p-1.5 w-full"
             placeholder="Search Your Favorite Rastaurant"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button className="search-btn" onClick={handleSearch}>
+          <button
+            className="bg-amber-500 text-white p-2  border-amber-500 hover:bg-amber-400 cursor-pointer "
+            onClick={handleSearch}
+          >
             Search
           </button>
         </div>
-        <div className="filter">
-          <button className="filter-btn" onClick={handleClick}>
+        <div className="w-1/2  flex justify-end ">
+          <button className="rounded-md px-3 py-2 border-[1.5px] border-amber-500 hover:bg-amber-500 hover:text-white text-sm cursor-pointer transition" onClick={handleClick}>
             Top Rated Restaurants
           </button>
         </div>
       </div>
-      <div className="rest-container">
+      <div className="flex flex-wrap gap-5 justify-center mb-30">
         {loading ? (
-          <>
+          <div className="flex">
             <Shimmer />
             <Shimmer />
             <Shimmer />
             <Shimmer />
-          </>
+          </div>
         ) : (
-          fillteredListOfRestaurants.map((restaurant, index) => (
-            <RestaurantCard
+          fillteredListOfRestaurants?.map((restaurant, index) => (
+          restaurant?.info?.availability?.opened ?  <ClosedRestaurantsCard
               key={restaurant.info.id}
-              restData={restaurant.info}
-              navigateOnClick  = {() =>  navigate(`/restaurant-menu/${restaurant.info.id}`)}
+              id= {restaurant.info.id}
+              restData={restaurant?.info}
+              navigateOnClick={() =>
+                navigate(`/restaurant-menu/${restaurant?.info?.id}`)
+              }
             />
+            : <RestaurantCard  key={restaurant.info.id}
+              restData={restaurant?.info}
+              navigateOnClick={() =>
+                navigate(`/restaurant-menu/${restaurant?.info?.id}`)
+              }/>
           ))
         )}
       </div>

@@ -13,7 +13,7 @@ const Login = () => {
   console.log(formik)
 
   return (
-    <div className="flex-center">
+    <div className="flex-center font-bold">
       <div className="form-container">
         <div>
           <h1 className="login-title">Login Page</h1>
