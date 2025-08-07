@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 import ThemeContext from "../utills/Context/ThemeContext";
+import CartContext from "../utills/Context/CartContext";
 
 
 
@@ -12,6 +13,8 @@ const Header = () => {
 
  
   const {theme, toggleTheme} = useContext(ThemeContext);
+  const {cartItems} = useContext(CartContext);
+ 
 
 
 
@@ -65,8 +68,10 @@ const MoonIcon = ({ size = 24, color = "black" }) => (
           <li className="p-2  border-b-2 border-b-transparent  hover:border-b-2 hover:border-amber-500">
             <Link to="/offers">Offers</Link>
           </li>
-          <li className="w-10 hover:scale-105 hover:cursor-pointer transition">
+          <li className="w-10 hover:scale-105 hover:cursor-pointer transition relative">
+           <Link to="/cart">
             <img src={CART_ICON_URL} />
+            <div className="w-5 h-5 rounded-full bg-red-600 absolute bottom-9 left-6 flex items-center justify-center"><span className="text-white font-bold text-sm">{cartItems.length}</span></div></Link>
           </li>
         
           <button

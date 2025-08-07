@@ -14,46 +14,53 @@ import Contact from "./pages/Contact";
 import RestaurantMenuList from "./pages/RestaurantMenuList";
 
 import ThemeContext from "./utills/Context/ThemeContext";
+import CartContext from "./utills/Context/CartContext";
+import Cart from "./pages/Cart";
 
 const App = () => {
-
   const [theme, setTheme] = useState("light");
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    setCartItems((prevItems) => [...prevItems, item]);
+  };
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-
   };
 
+  const removeItemFromCart = (itemId) => {
+    const removedItems = cartItems.filter(
+      (item) => item?.card?.info?.id !== itemId
+    );
+
+    setCartItems(removedItems);
+  };
+
+  const clearCart  = () => {
+    setCartItems([]);
+  }
+
   useEffect(() => {
-    if(theme === "dark") {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
-    
-
+    } else {
+      document.documentElement.classList.remove("dark");
     }
-    else {
-      document.documentElement.classList.remove("dark")
- 
-    }
-  }, [theme])
+  }, [theme]);
 
-  
   return (
-  <ThemeContext.Provider value={{ theme, toggleTheme }}>
-     
-     <div className="dark:bg-gray-900 dark:text-white">
-     
-      <Header />
-      {/* <h1 className="title">Food Items  List</h1> */}
-     
-      <div className="px-4 ">
-        {" "}
-        <Outlet />
-      </div>
-      <Footer />
-    </div>
-  
-  </ThemeContext.Provider>
-   
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <CartContext.Provider
+        value={{ cartItems, addToCart, removeItemFromCart, clearCart }}
+      >
+        <div className="bg-white dark:bg-gray-900 dark:text-white">
+          <Header />
+          <Outlet />
+          <Footer />
+        </div>
+      </CartContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -73,6 +80,10 @@ const appRoutes = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/restaurant-menu/:resId",

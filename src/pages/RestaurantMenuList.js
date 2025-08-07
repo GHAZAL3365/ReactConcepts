@@ -112,7 +112,7 @@ const RestaurantMenuList = () => {
 
       {menuList.map((menu, index) => (
         <MenuCard
-          key={menu.title}
+          key={menu?.card?.card?.info?.id}
           menu={menu}
           showMenu={index === showIndex ? true : false}
           setShowIndex={() => setShowIndex(index)}
