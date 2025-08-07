@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 
 
 
+// Using context in class based compoent can't use hooks in class based compoent
+// still we can consume context
 class About extends React.Component {
     constructor(props) {
         super(props); // ✅ You must call super(props) to access this.props
@@ -17,6 +19,7 @@ class About extends React.Component {
         console.log("rendered called")
         return<>
           <div> Hello </div>
+          
          <ExampleComponent  name = "Ghazala" age = {25} location = "Vijayawada" />
         </>;
               
