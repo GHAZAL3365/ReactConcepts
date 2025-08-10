@@ -51,7 +51,7 @@ const MoonIcon = ({ size = 24, color = "black" }) => (
 
   return (
     <header className="h-30 w-full">
-      <nav key={theme} className="bg-pink-100 text-black flex justify-between items-center px-2 h-[90px] dark:bg-black dark:text-white" >
+      <nav key={theme} className="bg-pink-100 text-black flex justify-between items-center px-2 h-[90px] dark:bg-gray-950 dark:text-white" >
         <div className="w-22 hover:scale-105 hover:cursor-pointer transition">
           <img src={LOGO_URL} alt="logo" />
         </div>

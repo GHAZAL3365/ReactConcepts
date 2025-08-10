@@ -8,22 +8,6 @@
 }
 
 
-.form-container {
-   
-    max-width: 450px;
-    width: 100%;
-    border-radius: 10px ;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(250, 250, 250);
-    border:  1px solid #ccc;
-    padding: 1rem;
-    padding-bottom: 2rem;
-   
-   
-
-}
-
 
 
 
