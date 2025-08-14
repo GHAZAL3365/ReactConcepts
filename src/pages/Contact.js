@@ -1,7 +1,7 @@
-import "./Login.css";
+// import "./Login.css";
 import { useFormik } from "formik";
 
-const Login = () => {
+const Contact = () => {
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -19,14 +19,14 @@ const Login = () => {
         </div>
 
         <form className="dark:bg-gray-900">
-          <div className="login-fields dark:bg-gray-900">
+          <div className=" dark:bg-gray-900">
             <label className="font-semibold">Name:</label>
             <input
               type="text"
               name="name"
               value={formik.values.name}
               onChange={formik.handleChange}
-              placeholder="Enter Your Password"
+              placeholder="Enter Your Name"
               className="login-inputs   bg-gray-200 dark:bg-gray-800"
             />
           </div>
@@ -51,4 +51,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Contact;

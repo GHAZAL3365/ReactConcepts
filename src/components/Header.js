@@ -78,7 +78,7 @@ const MoonIcon = ({ size = 24, color = "black" }) => (
             onClick={handleLogin}
             className="bg-orange-400 rounded-md px-3 py-2 cursor-pointer hover:bg-amber-500 text-white text-sm"
           >
-            {isLogin ? "Login" : "Logout"}
+            {isLogin ? "Login" : "Logout"} 
           </button>
 
            <li className="font-semibold cursor-pointer"  onClick={toggleTheme}>
