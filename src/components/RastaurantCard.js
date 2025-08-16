@@ -7,7 +7,7 @@ const RestaurantCard = (props) => {
    const { name,  avgRating, cloudinaryImageId, costForTwo, cuisines, availability } = props?.restData || {};
  
   return (
-    <div className="max-w-70 w-full cursor-pointer hover:scale-105 transition " onClick={props.navigateOnClick}>
+    <div data-testid="resCard" className="max-w-70 w-full cursor-pointer hover:scale-105 transition " onClick={props.navigateOnClick}>
       <img
         src={FOOD_API_URL + cloudinaryImageId
         }

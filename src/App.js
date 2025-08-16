@@ -54,7 +54,7 @@ const App = () => {
       <CartContext.Provider
         value={{ cartItems, addToCart, removeItemFromCart, clearCart }}
       >
-        <div className="bg-white dark:bg-gray-900 dark:text-white">
+        <div className="bg-white dark:bg-gray-900 dark:text-white h-screen">
           <Header />
           <Outlet />
           <Footer />

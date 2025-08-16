@@ -31,6 +31,8 @@ const RestaurantList = () => {
       const response = await fetch(RESTAURANT_API_URL);
       const json = await response.json();
 
+      
+
       const restaurants =
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
@@ -56,9 +58,10 @@ const RestaurantList = () => {
 
   return (
     <>
-      <div className="p-2 flex justify-between w-full mb-10 dark:bg-gray-800 dark:text-white">
+      <div className="p-2 flex justify-between w-full mb-10  dark:text-white">
         <div className=" w-2/6 flex items-center justify-between border-[1.5px] border-amber-500 rounded-md">
           <input
+            data-testid = "search-input"
             type="text"
             className="outline-0 p-1.5 w-full"
             placeholder="Search Your Favorite Rastaurant"
